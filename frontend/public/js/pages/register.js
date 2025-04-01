@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const form = document.querySelector('.register-form');
+    
+    const form = document.querySelector('.form');
     // const usersList = document.querySelector('.users-list');    
 
     // Función para agregar un usuario a la lista
@@ -9,14 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
     //     item.textContent = `${user.name} - ${user.email} - ${user.address} - ${user.phone}`;
     //     usersList.appendChild(item);
     // };
-
+    if (!form) return; // Verificar si el formulario existe antes de continuar
     form.addEventListener('submit', async (event) => {
         event.preventDefault(); // Evita la recarga de la página
 
-        const userName = document.querySelector('.register-form__input--name');
-        const userEmail = document.querySelector('.register-form__input--email');
-        const userAddress = document.querySelector('.register-form__input--address');
-        const userPhone = document.querySelector('.register-form__input--phone');
+        const userName = document.querySelector('.form__input--name');
+        const userEmail = document.querySelector('.form__input--email');
+        const userAddress = document.querySelector('.form__input--address');
+        const userPhone = document.querySelector('.form__input--phone');
 
         const formData = {
             //Evitas errores si algún campo no existe userName ?
