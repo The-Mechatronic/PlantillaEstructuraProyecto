@@ -1,3 +1,10 @@
+👤 Autor:[Ing. Edwar Hernando Velásquez]
+
+📧 Email: ricoprogramar@gmail.com
+🔗 LinkedIn: linkedin.com/in/tuusuario
+🐙 GitHub: github.com/The-Mechatronic
+🤖 Pag. Web: ricoprogramar.com
+
 # Mi Proyecto
 
 ## Descripción
@@ -13,17 +20,17 @@ Además, maneja una base de datos para gestionar usuarios, sensores, contacto y 
 │   │-- /config/             # Configuración del proyecto
 │   │   ├── db.js            # Conexión a la base de datos
 │   │-- /routes/             # Rutas de la API
-│   │   ├── users.js         # Rutas para usuarios
-│   │   ├── sensors.js       # Rutas para sensores
-│   │   ├── contact.js       # Rutas para contacto
-│   │   ├── services.js      # Rutas para servicios
+│   │   ├── registerRoutes.js         # Rutas para usuarios
+│   │   ├── sensorsRoutes.js       # Rutas para sensores
+│   │   ├── contactRoutes.js       # Rutas para contacto
+│   │   ├── servicesRoutes.js      # Rutas para servicios
 │   │-- /controllers/        # Lógica de las rutas (controladores)
-│   │   ├── usersController.js
+│   │   ├── registerController.js
 │   │   ├── sensorsController.js
 │   │   ├── contactController.js
 │   │   ├── servicesController.js
 │   │-- /models/             # Modelos de la base de datos
-│   │   ├── usersModel.js
+│   │   ├── registerModel.js
 │   │   ├── sensorsModel.js
 │   │   ├── contacModel.js
 │   │   ├── servicesModel.js
@@ -38,11 +45,29 @@ Además, maneja una base de datos para gestionar usuarios, sensores, contacto y 
 │-- /frontend/               # Todo el frontend organizado aquí
 │   │-- /public/             # Archivos estáticos (CSS, JS, imágenes)
 │   │   ├── /css/            # Estilos
-│   │   ├── /js/             # Scripts frontend
-│   │   ├── /img/            # Imágenes
-│   │-- /views/              # Vistas HTML
-│   │   ├── index.html
-│   │   ├── users.html
+│   │   │-- main.css             # Archivo principal que importa los demás
+│   │   │-- reset.css            # Normalización y reseteo de estilos
+│   │   │-- variables.css        # Variables de colores, tipografías, etc.
+│   │   │-- layout.css           # Estructura general (grid, flexbox, espaciados)
+│   │   │-- components/
+│   │   │   ├── navbar.css       # Estilos del navbar
+│   │   │   ├── footer.css       # Estilos del footer
+│   │   │   ├── sidebar.css      # Estilos del sidebar
+│   │   │   ├── form.css         # Estilos del formulario
+│   │   │-- pages/
+│   │   │   ├── home.css         # Estilos de la página de inicio
+│   │   │   ├── register.css     # Estilos de la página de registro
+│   │   │   ├── sensors.css      # Estilos de la página de sensores
+│   │   │   ├── contact.css      # Estilos de la página de contacto
+│   │   │   ├── services.css     # Estilos de la página de servicios
+│   │   │-- themes/
+│   │   │   ├── dark-mode.css    # Tema oscuro
+│   │   │   ├── light-mode.css   # Tema claro
+│   │   ├── /js/                 # Scripts frontend
+│   │   ├── /img/                # Imágenes
+│   │-- /views/                  # Vistas HTML
+│   │   ├── index.html  
+│   │   ├── register.html
 │   │   ├── sensors.html
 │   │   ├── contact.html
 │   │   ├── services.html
@@ -98,20 +123,23 @@ Aquí van las pruebas automatizadas del backend y frontend.
 - Workbench 8.0
 - Base de datos (MySQL)
 
+### Creación del servidor y configuraciones
+- mkdir proyecto-mysql # Crea una carpeta para tu proyecto y accede a ella desde la terminal:
+- cd proyecto-mysql
+
+- npm init -y # Inicializa un proyecto de Node.js:
+
+- npm install express mysql2 cors dotenv # Instala las dependencias necesarias:
+
+- cp .env.example .env  # Configurar variables de entorno
+
+- node backend/server.js # Realizar conexión con la BD
+
 ### Clonar el repositorio
 ```sh
-git clone https://github.com/usuario/mi-proyecto.git
+git clone https://github.com/The-Mechatronic/PlantillaEstructuraProyecto.git
 cd mi-proyecto
 ```
-
-### Configuración del Backend
-```sh
-cd backend
-npm install
-cp .env.example .env  # Configurar variables de entorno
-node server.js  # Iniciar el servidor
-```
-
 ### Configuración del Frontend
 ```sh
 cd frontend
@@ -137,5 +165,15 @@ npm test
 3. Realizar cambios y hacer commit
 4. Crear un pull request
 
-## Licencia
-Este proyecto está bajo la licencia MIT.
+## Flujo 
+Resumen del Flujo
+Frontend o cliente envía una petición HTTP (Ej: GET /api/user)
+El servidor (server.js) la recibe y la dirige a la ruta correcta (routes/user.js)
+La ruta (users.js) llama al controlador (usersController.js)
+El controlador ejecuta la lógica y llama al modelo (usersModel.js)
+El modelo consulta la base de datos (db.js)
+El resultado viaja de regreso: Modelo → Controlador → Ruta → Servidor → Cliente
+
+📜 Licencia
+Creative Commons Attribution 4.0	CC-BY-4.0
+https://creativecommons.org/licenses/by/4.0/
