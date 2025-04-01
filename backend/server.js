@@ -15,8 +15,9 @@ app.use(express.static('frontend/public'));
 
 // app.use(cors()); // Habilita CORS para permitir solicitudes desde otros dominios
 app.use(cors({
-    origin: '*', // Permitir todas las conexiones (solo para pruebas)
-    // origin: 'http://localhost:3000', //Limita la conexián a solo esta
+    // origin: '*', // Permitir todas las conexiones (solo para pruebas)
+    origin: ['http://localhost:3000',
+            'http://127.0.0.1:3000'], //Limita la conexián a solo esta
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
 }));

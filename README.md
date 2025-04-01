@@ -174,6 +174,20 @@ El controlador ejecuta la lógica y llama al modelo (usersModel.js)
 El modelo consulta la base de datos (db.js)
 El resultado viaja de regreso: Modelo → Controlador → Ruta → Servidor → Cliente
 
+## Prefijos para indicar el tipo de cambio en GitHub:
+feat: (feature/funcionalidad) Nueva funcionalidad.
+fix: Corrección de errores.
+docs: Cambios en la documentación.
+style: Cambios en el formato del código (sin afectar la lógica).
+refactor: Refactorización del código (sin cambios en la funcionalidad).
+test: Adición o modificación de pruebas.
+chore: Cambios en el proceso de construcción o herramientas auxiliares.
+
+# Ejemplos
+feat: Agregar validación de formulario 
+fix: Corregir error de renderizado en la página de inicio
+feat: Implementar paginación en la lista de productos
+
 📜 Licencia
 Creative Commons Attribution 4.0	CC-BY-4.0
 https://creativecommons.org/licenses/by/4.0/
