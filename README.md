@@ -1,11 +1,11 @@
-👤 Autor:[Ing. Edwar Hernando Velásquez]
+👤 Autor:Ing. Edwar Hernando Velásquez
 
 📧 Email: ricoprogramar@gmail.com
 🔗 LinkedIn: linkedin.com/in/tuusuario
 🐙 GitHub: github.com/The-Mechatronic
 🤖 Pag. Web: ricoprogramar.com
 
-# Mi Proyecto
+# Plantilla Estructura Proyecto
 
 ## Descripción
 Este proyecto es una aplicación web que integra un backend en Node.js con Express y un frontend basado en HTML, CSS y JavaScript. 
