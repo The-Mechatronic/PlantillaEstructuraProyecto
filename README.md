@@ -64,6 +64,16 @@ Además, maneja una base de datos para gestionar usuarios, sensores, contacto y 
 │   │   │   ├── dark-mode.css    # Tema oscuro
 │   │   │   ├── light-mode.css   # Tema claro
 │   │   ├── /js/                 # Scripts frontend
+│   │   │   │-- /pages/
+│   │   │   │   │-- contact.js
+│   │   │   │   │-- sensors.js
+│   │   │   │   │-- services.js
+│   │   │   │   │-- register.js
+│   │   │   │-- /validations/
+│   │   │   │   │-- constactValidation.js
+│   │   │   │   │-- sensorsValidation.js
+│   │   │   │   │-- servicesValidation.js
+│   │   │   │   │-- registerValidation.js
 │   │   ├── /img/                # Imágenes
 │   │-- /views/                  # Vistas HTML
 │   │   ├── index.html  
@@ -167,12 +177,26 @@ npm test
 
 ## Flujo 
 Resumen del Flujo
-Frontend o cliente envía una petición HTTP (Ej: GET /api/user)
-El servidor (server.js) la recibe y la dirige a la ruta correcta (routes/user.js)
-La ruta (users.js) llama al controlador (usersController.js)
-El controlador ejecuta la lógica y llama al modelo (usersModel.js)
-El modelo consulta la base de datos (db.js)
-El resultado viaja de regreso: Modelo → Controlador → Ruta → Servidor → Cliente
+1. Frontend o cliente envía una petición HTTP (Ej: GET /api/user)
+2. El servidor (server.js) la recibe y la dirige a la ruta correcta (routes/user.js)
+3. La ruta (users.js) llama al controlador (usersController.js)
+4. El controlador ejecuta la lógica y llama al modelo (usersModel.js)
+5. El modelo consulta la base de datos (db.js)
+6. El resultado viaja de regreso: Modelo → Controlador → Ruta → Servidor → Cliente
+
+### Prefijos para indicar el tipo de cambio en GitHub:
+1. feat: (feature/funcionalidad) Nueva funcionalidad.
+2. fix: Corrección de errores.
+3. docs: Cambios en la documentación.
+4. style: Cambios en el formato del código (sin afectar la lógica).
+5. refactor: Refactorización del código (sin cambios en la funcionalidad).
+6. test: Adición o modificación de pruebas.
+7. chore: Cambios en el proceso de construcción o herramientas auxiliares.
+
+## Ejemplos
+1. feat: Agregar validación de formulario 
+2. fix: Corregir error de renderizado en la página de inicio
+3. feat: Implementar paginación en la lista de productos
 
 📜 Licencia
 Creative Commons Attribution 4.0	CC-BY-4.0

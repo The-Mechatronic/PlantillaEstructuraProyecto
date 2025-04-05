@@ -9,11 +9,11 @@ const { registerUser, getUsers } = require('../controllers/registerController');
 
 // 📌 Ruta para registrar un nuevo usuario (Método HTTP: POST)
 // Cuando un cliente envía una solicitud POST a la raíz ('/'), se ejecuta registerUser
-router.post('/register', registerUser);
+router.post('/', registerUser);
 
 // 📌 Ruta para obtener todos los usuarios (Método HTTP: GET)
 // Cuando un cliente envía una solicitud GET a la raíz ('/'), se ejecuta getUsers
-router.get('/list', getUsers);
+router.get('/', getUsers);
 
 // Exporta el enrutador para que pueda ser utilizado en otros archivos
 module.exports = router;
