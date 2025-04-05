@@ -1,4 +1,5 @@
-//  Configuración de la base de datos
+// Configuración de la base de datos
+// Conexión con la base de datos
 // Este es un ejemplo
 
 const mysql = require('mysql2/promise'); // Usamos pool para mejor manejo de conexiones

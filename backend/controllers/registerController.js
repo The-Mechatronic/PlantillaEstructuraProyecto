@@ -4,17 +4,17 @@ const pool = require('../config/db');
 // 📌 Función para registrar un usuario en la base de datos
 const registerUser = async (req, res) => {
     // Extrae los datos enviados en el cuerpo de la petición
-    const { name, email, address, phone } = req.body;
+    const { name, email, phone, password } = req.body;
 
     try {
         // Ejecuta una consulta SQL para insertar el nuevo usuario en la base de datos
         const [result] = await pool.query(
-            'INSERT INTO user (name, email, address, phone) VALUES (?, ?, ?, ?)',
-            [name, email, address, phone] // Valores que se insertarán en la consulta
+            'INSERT INTO user (name, email, phone, password) VALUES (?, ?, ?, ?)',
+            [name, email, phone, password] // Valores que se insertarán en la consulta
         );
 
         // Responde con un código 201 (creado) y devuelve el usuario registrado con su nuevo ID
-        res.status(201).json({ id: result.insertId, name, email, address, phone });
+        res.status(201).json({ id: result.insertId, name, email, phone, password });
 
     } catch (error) {
         // Manejo de errores en caso de fallo en la inserción de datos

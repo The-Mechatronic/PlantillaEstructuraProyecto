@@ -184,7 +184,7 @@ Resumen del Flujo
 5. El modelo consulta la base de datos (db.js)
 6. El resultado viaja de regreso: Modelo → Controlador → Ruta → Servidor → Cliente
 
-## Prefijos para indicar el tipo de cambio en GitHub:
+### Prefijos para indicar el tipo de cambio en GitHub:
 1. feat: (feature/funcionalidad) Nueva funcionalidad.
 2. fix: Corrección de errores.
 3. docs: Cambios en la documentación.
@@ -193,7 +193,7 @@ Resumen del Flujo
 6. test: Adición o modificación de pruebas.
 7. chore: Cambios en el proceso de construcción o herramientas auxiliares.
 
-# Ejemplos
+## Ejemplos
 1. feat: Agregar validación de formulario 
 2. fix: Corregir error de renderizado en la página de inicio
 3. feat: Implementar paginación en la lista de productos

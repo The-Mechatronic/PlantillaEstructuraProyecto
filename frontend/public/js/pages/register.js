@@ -11,20 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
     //     usersList.appendChild(item);
     // };
     if (!form) return; // Verificar si el formulario existe antes de continuar
+
     form.addEventListener('submit', async (event) => {
         event.preventDefault(); // Evita la recarga de la página
 
         const userName = document.querySelector('.form__input--name');
-        const userEmail = document.querySelector('.form__input--email');
-        const userAddress = document.querySelector('.form__input--address');
+        const userEmail = document.querySelector('.form__input--email');        
         const userPhone = document.querySelector('.form__input--phone');
+        const password = document.querySelector('.form__input--phone');
 
         const formData = {
-            //Evitas errores si algún campo no existe userName ?
+            //Evitas errores si algún campo no existe?
             name: userName ? userName.value : '', 
-            email: userEmail ? userEmail.value : '',
-            address: userAddress?.value || null,  
-            phone: userPhone ? userPhone.value : ''
+            email: userEmail ? userEmail.value : '',            
+            phone: userPhone ? userPhone.value : '',
+            phone: password ? password.value : ''
         };
 
         try {
